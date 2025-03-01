@@ -20,6 +20,7 @@
  */
 function getFirstValue(arr) {
   // TODO: implement code
+  return arr[0];
 }
 
 /**
@@ -32,6 +33,7 @@ function getFirstValue(arr) {
  */
 function makeArray(a, b, c, d) {
   // TODO: implement code
+  return [a, b, c, d];
 }
 
 /**
@@ -40,6 +42,15 @@ function makeArray(a, b, c, d) {
  */
 function createFirstFivePrimes() {
   // TODO: implement code
+  let newArray = Array.from({ length: 12 }, (value, index) => index);
+  let primes = newArray.filter(num => {
+    if (num < 2) return false;
+    for (let i = 2; i <= Math.sqrt(num); i++) {
+      if (num % i === 0) return false;
+    }
+    return true;
+  });
+  return primes;
 }
 
 /**
@@ -50,6 +61,11 @@ function createFirstFivePrimes() {
 function createSizedArray(size) {
   // TODO: implement code
   // HINT: Use a for loop and push numbers from 0 to size - 1 into an array.
+  let myArray = [];
+  for (let i = 0; i < size; i++) {
+    myArray.push(i);
+  }
+  return myArray;
 }
 
 /**
@@ -62,6 +78,10 @@ function createSizedArray(size) {
 function modifyArrayByAdding(arr) {
   // TODO: implement code
   // HINT: Create a shallow copy and then use unshift() and push().
+  const arr2 = [...arr];
+  arr2.push(1);
+  arr2.unshift(1);
+  return arr2;
 }
 
 /**
@@ -73,6 +93,9 @@ function modifyArrayByAdding(arr) {
 function modifyArrayByDeleting(arr) {
   // TODO: implement code
   // HINT: Create a shallow copy and use shift() and pop() if the array is not empty.
+  const arr2 = [...arr];
+  arr2.shift(), arr2.pop();
+  return arr2;
 }
 
 /**
@@ -83,6 +106,12 @@ function modifyArrayByDeleting(arr) {
  */
 function findElementAtIndex(arr, index) {
   // TODO: implement code
+  if (index >= 0 && index <= arr.length) {
+    return arr[index];
+  }
+  else {
+    return undefined;
+  }
 }
 
 /**
@@ -94,6 +123,7 @@ function findElementAtIndex(arr, index) {
  */
 function findElementByValue(arr, value) {
   // TODO: implement code
+  return arr.indexOf(value);
 }
 
 /**
@@ -106,6 +136,7 @@ function findElementByValue(arr, value) {
  */
 function changeElementAtIndex(arr, index, value) {
   // TODO: implement code
+  return arr.splice(index, 1, value);
 }
 
 /**
@@ -115,6 +146,8 @@ function changeElementAtIndex(arr, index, value) {
  */
 function makeStringFromArray(arr) {
   // TODO: implement code
+  return arr.join("");
+
 }
 
 /**
@@ -124,6 +157,7 @@ function makeStringFromArray(arr) {
  */
 function createShallowCopy(arr) {
   // TODO: implement code
+  return arr = [...arr];
 }
 
 module.exports = {

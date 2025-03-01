@@ -22,6 +22,8 @@
 function findTheCharacterAtIndex(str, indx) {
   // TODO: implement code
   // HINT: Use the charAt() method.
+  return str.charAt(indx);
+
 }
 
 /**
@@ -33,6 +35,7 @@ function findTheCharacterAtIndex(str, indx) {
  */
 function sliceTheString(str, start, end) {
   // TODO: implement code
+  return str.slice(start, end);
 }
 
 /**
@@ -43,6 +46,7 @@ function sliceTheString(str, start, end) {
  */
 function splitTheString(str, separator) {
   // TODO: implement code
+  return str.split(separator);
 }
 
 /**
@@ -52,6 +56,7 @@ function splitTheString(str, separator) {
  */
 function makeAllUpperCase(str) {
   // TODO: implement code
+  return str.toUpperCase();
 }
 
 /**
@@ -61,6 +66,7 @@ function makeAllUpperCase(str) {
  */
 function makeAllLowerCase(str) {
   // TODO: implement code
+  return str.toLowerCase();
 }
 
 /**
@@ -71,6 +77,10 @@ function makeAllLowerCase(str) {
 function makeWordTitleCase(word) {
   // TODO: implement code
   // HINT: Capitalize the first letter and lowercase the rest.
+  if (word.length > 0) {
+    return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+  }
+  return word;
 }
 
 /**
@@ -83,6 +93,8 @@ function makeWordTitleCase(word) {
 function replaceTheString(str, oldStr, newStr) {
   // TODO: implement code
   // HINT: Try using the split() method, then join.
+  return str.split(oldStr).join(newStr);
+
 }
 
 /**
@@ -93,6 +105,7 @@ function replaceTheString(str, oldStr, newStr) {
 function makeSentenceTitleCase(sentence) {
   // TODO: implement code
   // HINT: Split the sentence into words, transform each word, then join them back.
+  return sentence.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(" ");
 }
 
 module.exports = {

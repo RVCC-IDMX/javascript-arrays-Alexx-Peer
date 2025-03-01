@@ -21,6 +21,9 @@
 function addUpArrayElements(arr) {
   // TODO: implement code
   // HINT: Use a loop (for or forEach) to sum the elements.
+  let sum = 0;
+  arr.forEach(num => { sum += num });
+  return sum;
 }
 
 /**
@@ -31,6 +34,8 @@ function addUpArrayElements(arr) {
 function makeSquareNumbers(arr) {
   // TODO: implement code
   // HINT: Use the map() method.
+  return arr.map(i => i ** 2);
+
 }
 
 /**
@@ -41,6 +46,8 @@ function makeSquareNumbers(arr) {
  */
 function filterForLargeWords(arr, length) {
   // TODO: implement code
+  return arr.filter((word) => word.length > length);
+
 }
 
 /**
@@ -50,6 +57,7 @@ function filterForLargeWords(arr, length) {
  */
 function findTheFirstEvenNumber(arr) {
   // TODO: implement code
+  return arr.find(val => val % 2 === 0);
 }
 
 /**
@@ -60,6 +68,9 @@ function findTheFirstEvenNumber(arr) {
 function sortCaseSensitive(arr) {
   // TODO: implement code
   // HINT: Create a shallow copy and then use sort().
+  let sorted = [...arr];
+  sorted.sort();
+  return sorted;
 }
 
 /**
@@ -70,6 +81,7 @@ function sortCaseSensitive(arr) {
  */
 function makeTheString(arr, separator) {
   // TODO: implement code
+  return arr.join(separator);
 }
 
 /**
@@ -79,6 +91,8 @@ function makeTheString(arr, separator) {
  */
 function reverseTheArray(arr) {
   // TODO: implement code
+  let copy = [...arr];
+  return copy.reverse();
 }
 
 /**
@@ -90,6 +104,7 @@ function reverseTheArray(arr) {
 function makeMirrorArray(arr) {
   // TODO: implement code
   // HINT: Use slice (exclude the last element), reverse it, then concat.
+  return arr.concat(arr.slice(0, -1).reverse());
 }
 
 /**
@@ -101,6 +116,7 @@ function makeMirrorArray(arr) {
 function dropRight(arr, n) {
   // TODO: implement code
   // HINT: Use slice() to return elements up to arr.length - n.
+  return arr.slice(0, -n);
 }
 
 /**
@@ -112,6 +128,7 @@ function dropRight(arr, n) {
 function dropLeft(arr, n) {
   // TODO: implement code
   // HINT: Use slice() starting at index n.
+  return arr.slice(n);
 }
 
 /**
@@ -122,6 +139,7 @@ function dropLeft(arr, n) {
  */
 function checkArrayForValue(arr, val) {
   // TODO: implement code
+  return arr.includes(val);
 }
 
 module.exports = {
